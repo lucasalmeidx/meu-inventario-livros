@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cadastro de Inventário de Livros</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+<!-- === TELA DE LOGIN === -->
+<section id="login-screen" class="login-container">
+<h2>Login</h2>
+<form id="loginForm">
+<label for="loginEmail">E-mail</label>
+<input type="email" id="loginEmail" required>
+
+
+<label for="loginPassword">Senha</label>
+<input type="password" id="loginPassword" required minlength="4">
+
+
+<button type="submit">Entrar</button>
+</form>
+</section>
+
+
+<!-- Oculta o restante do site até o login ser validado -->
+<div id="site-content" style="display:none;">
+<div class="container">
+<header>
+<button id="logoutBtn" class="logout">Sair</button>
+<div class="card title-card">
+<strong>📚 Cadastro de Inventário de Livros</strong>
+</div>
+<div class="header-text">
+<h1>Gerencie seu acervo</h1>
+<p class="lead">Adicione livros, defina status, datas de aquisição e localizações.</p>
+</div>
+</header>
+
+
+<section class="card">
+<form id="bookForm">
+<label>Título<input id="title" type="text" required></label>
+<label>Autor<input id="author" type="text" required></label>
+<label>Data de aquisição<input id="date" type="date" required></label>
+<label>Localização<input id="location" type="text"></label>
+<label>Status
+<select id="status">
+<option>Available</option>
+<option>Loaned</option>
+<option>Reserved</option>
+<option>Lost</option>
+</select>
+</label>
+
+
+    <div class="actions">
+        <button type="button" id="clearAll" class="secondary">Limpar inventário</button>
+        <button type="submit">Adicionar Livro</button>
+    </div>
+</form>
+
+
+<table id="booksTable">
+<thead>
+<tr>
+<th>Título</th><th>Autor</th><th>Data</th><th>Local</th><th>Status</th><th>Ações</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+
+</section>
+</div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
